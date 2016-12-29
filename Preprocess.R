@@ -1,7 +1,7 @@
 # read data
 setwd("")
-SP <- read.csv("Speed Dating Data.csv",na.strings = "")
-str(SP)
+sp <- read.csv("Speed Dating Data.csv",na.strings = "")
+str(sp)
 
 # remove duplicate rows
 sp_unique <- sp[!duplicated(sp$iid), ]
