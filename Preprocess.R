@@ -68,8 +68,3 @@ library(VIM)
 sp_imputed <- kNN(sp_feature)
 sp_imputed <- sp_imputed[,names(sp_feature)]
 sum(is.na(sp_imputed))
-
-# 5.) convert to numeric
-sp_numeric <- sapply(sp_imputed, as.numeric)
-str(sp_numeric)
-is.numeric(sp_numeric)
