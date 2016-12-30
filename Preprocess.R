@@ -9,9 +9,9 @@ nrow(sp_unique)
 View(head(sp_unique))
 
 # feature selection
-sp_feature = sp_unique[,c("iid","age","gender","match","date","go_out","sports","tvsports","exercise","dining","museums",
-                   "art","hiking","gaming","clubbing","reading","tv","theater","movies","concerts","music",
-                   "shopping","yoga")]
+sp_feature = sp_unique[,c("iid","age","gender","match","date","sports","dining",
+                   "art","gaming","clubbing","reading","movies","concerts",
+                   "shopping")]
 View(sp_feature)
 View(head(sp_feature))
 sum(is.na(sp_feature))
