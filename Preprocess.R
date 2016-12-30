@@ -43,33 +43,4 @@ boxplot(z$age,data=z, xlab='Frequency',ylab='Age' )
 
 
 
-########## PRE-PROCESSING ##########
 
-# 1.) read data
-sp <- read.csv("Speed Dating Data.csv",na.strings = "")
-str(sp)
-
-# 2.) remove duplicate rows
-sp_unique <- sp[!duplicated(sp$iid), ]
-nrow(sp_unique)
-View(head(sp_unique))
-
-# 3.) feature selection
-sp_feature = sp_unique[,c("iid","age","gender","match","date","sports","dining",
-                   "art","gaming","clubbing","reading","movies","concerts",
-                   "shopping")]
-View(sp_feature)
-View(head(sp_feature))
-sum(is.na(sp_feature))
-
-# 4.) imputation using k-NN
-install.packages("VIM")
-library(VIM)
-sp_imputed <- kNN(sp_feature)
-sp_imputed <- sp_imputed[,names(sp_feature)]
-sum(is.na(sp_imputed))
-
-# 5.) convert to numeric
-sp_numeric <- sapply(sp_imputed, as.numeric)
-str(sp_numeric)
-is.numeric(sp_numeric)
