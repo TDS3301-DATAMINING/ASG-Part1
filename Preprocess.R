@@ -43,10 +43,10 @@ boxplot(z$age,data=z, xlab='Frequency',ylab='Age' )
 
 
 
-########## PRE-PROCESSING ##########
+########## PART E PRE-PROCESSING ##########
 
 # 1.) read data
-sp <- read.csv("Speed Dating Data.csv",na.strings = "")
+sp <- read.csv("Speed Dating Data.csv", na.strings = "")
 str(sp)
 
 # 2.) remove duplicate rows
